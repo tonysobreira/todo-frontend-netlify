@@ -9,9 +9,9 @@ import { AppMenu } from './AppMenu';
 //import { AppProfile } from './AppProfile';
 import { AppConfig } from './AppConfig';
 
-import { Home } from './components/Home';
-import { About } from './components/About';
-import { TodoPage } from './components/TodoPage';
+import { HomePage } from 'pages/HomePage';
+import { AboutPage } from 'pages/AboutPage';
+import { TodoPage } from 'pages/TodoPage';
 
 import PrimeReact from 'primereact/api';
 
@@ -90,7 +90,7 @@ const App = () => {
     }
 
     const menu = [
-        { label: 'Home', icon: 'pi pi-fw pi-home', to: '/' },        
+        { label: 'Home', icon: 'pi pi-fw pi-home', to: '/' },
         { label: 'About', icon: 'pi pi-fw pi-question', to: '/about' }
     ];
 
@@ -133,7 +133,7 @@ const App = () => {
 
             <CSSTransition classNames="layout-sidebar" timeout={{ enter: 200, exit: 200 }} in={isSidebarVisible()} unmountOnExit>
                 <div ref={sidebar} className={sidebarClassName} onClick={onSidebarClick}>
-                    <div className="layout-logo" style={{cursor: 'pointer'}} onClick={() => history.push('/')}>
+                    <div className="layout-logo" style={{ cursor: 'pointer' }} onClick={() => history.push('/')}>
                         <img alt="Logo" src={logo} width="100" height="50" />
                     </div>
 
@@ -145,8 +145,8 @@ const App = () => {
                 layoutMode={layoutMode} onLayoutModeChange={onLayoutModeChange} layoutColorMode={layoutColorMode} onColorModeChange={onColorModeChange} />
 
             <div className="layout-main">
-                <Route path="/" exact component={Home} />
-                <Route path="/about" component={About} />
+                <Route path="/" exact component={HomePage} />
+                <Route path="/about" component={AboutPage} />
                 <Route path="*" component={TodoPage} />
             </div>
 
