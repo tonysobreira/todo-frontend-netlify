@@ -11,12 +11,12 @@ import { TodoService } from 'service/TodoService';
 export const TodoPage = () => {
 
     const todoService = new TodoService();
-
+    
     const [todo, setTodo] = useState({
         id: 0,
         url: "",
         items: []
-    });
+    });    
 
     const [item, setItem] = useState({
         id: 0,
@@ -225,7 +225,6 @@ export const TodoPage = () => {
                             })
                         }
 
-
                     </div>
 
                     <Dialog visible={itemDialog}
@@ -312,6 +311,5 @@ export const TodoPage = () => {
             }
         </>
     );
-
 
 }
